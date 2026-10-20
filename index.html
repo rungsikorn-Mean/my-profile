@@ -526,7 +526,34 @@
       </div>
 
       <div class="relative border-l border-slate-800 ml-4 md:ml-32 space-y-12">
-        
+     
+        <!-- Job 0: รับเหมาสารคาม -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-green-400 flex items-center justify-center text-[10px] text-green-400 shadow-neon-green">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="glass-card rounded-2xl p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded bg-green-500/10 text-green-300 text-xs font-mono font-semibold">2 ส.ค. 2568 - ปัจจุบัน</span>
+              <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>อ.เมืองสารคาม, สารคาม</span>
+            </div>
+            <h4 class="text-xl font-bold text-white">ผู้รับเหมาดิน งานขุด ขน ถม</h4>
+            <div class="text-green-400 text-sm font-semibold">ทำงานร่วมกับ บริษัท สามเหลี่ยม จำกัด</div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              บ่อดินแลกน้ำมหาสารคาม:
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+              <li>คิดต้นทุนรับเหมา  <strong class="text-slate-200">เสนอราคา</strong> ล๊อบบี้</li>
+              <li>วัดค่าคอนทัวร์ วัดปริมาณดิน ทำแบบส่งงาน (ประยุกต์ใช้ความรู้ด้านวิศวกรรม & งานสำรวจ)</li>
+            </ul>
+            <div class="pt-2">
+              <button onclick="openModal('sarakarm')" class="text-xs text-green-400 hover:text-cyan-300 font-mono inline-flex items-center gap-1.5 underline decoration-cyan-500/40 underline-offset-4">
+                <i class="fa-solid fa-file-lines"></i> ดูภาพการทำงาน 
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Job 1: Burapha Metrology System -->
         <div class="relative pl-8 group">
           <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center text-[10px] text-cyan-400 shadow-neon-cyan">
@@ -684,6 +711,16 @@
           </div>
           <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">หนังสือรับรองวุฒิการศึกษา</h4>
           <p class="text-xs text-slate-400 line-clamp-2">วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมอุตสาหการ (GPA 2.82)</p>
+          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+        </div>
+        <!-- Doc 5: สารคาม -->
+        <div onclick="openModal('sarakarm')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-blue-400/60 group">
+          <div class="h-32 bg-blue-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-blue-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+            <i class="fa-solid fa-snowplow text-4xl text-blue-400 mb-2"></i>
+            <span class="text-[11px] font-mono text-blue-300">รับเหมา ขุด ขน ถมดิน</span>
+          </div>
+          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">ภาพการทำงานรับเหมา</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">บ่อดิน อ.เมืองสารคาม จ.สารคาม</p>
           <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
 
@@ -923,6 +960,36 @@
             </div>
             <p class="text-sm">
               ผ่านการศึกษาหลักสูตรวิศวกรรมศาสตร์ ทั้งการเขียนแบบวิศวกรรม, การเขียนโปรแกรมคอมพิวเตอร์, การวิจัยการดำเนินงาน (OR), ระบบอัตโนมัติในอุตสาหกรรม, การควบคุมคุณภาพ และการบริหารโครงการ
+            </p>
+          </div>
+        `
+      },
+      'sarakarm': {
+        title: 'ภาพจริงหน้างาน',
+        subtitle: 'อ.เมืองสารคคาม จ.มหาสารคาม • 2568-ปัจจุบัน'
+          ,
+        icon: 'fa-solid fa-snowplow text-blue-400',
+        html: `
+          <div class="space-y-3">
+            <img src="assets/sarakarm.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            <img src="assets/sarakarm2.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            <img src="assets/sarakarm3.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            <img src="assets/sarakarm4.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            <img src="assets/sarakarm5.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            <img src="assets/sarakarm6.jpg" alt="Degree Certificate" class="w-full h-auto rounded-xl border border-slate-700 mb-4 shadow-lg object-contain max-h-[70vh] bg-slate-800">
+            
+            <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-200">
+              <strong class="block text-base text-blue-300">ผู้รับเหมาดิน งานขุด ขน ถม</strong>
+              ผู้ทำงานร่วมกับ บริษัท สามเหลี่ยม จำกัด
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-black/30 p-3 rounded-lg">
+              <div><strong>คิดต้นทุนรับเหมา</strong> เสนอราคา </div>
+              <div><strong>วัดค่าคอนทัวร์</strong>  ล๊อบบี้</div>
+              <div><strong>วัดปริมาณดิน</strong> </div>
+              <div><strong>ทำแบบส่งงาน </strong> </div>
+            </div>
+            <p class="text-sm">
+              งานรับเหมาขุด ขน ถมดิน บ่อดิน อ.เมืองสารคาม จ.มหาสารคาม โดยใช้รถแบคโฮและรถบรรทุก 6 ล้อ ในการดำเนินงานตามแบบและปริมาณที่กำหนด
             </p>
           </div>
         `
