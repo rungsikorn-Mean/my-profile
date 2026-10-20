@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rungsikorn Singthaisong (Mean) | AI Specialist & Industrial Engineer</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Inter & Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Sarabun', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              cyan: '#00F5D4',
+              purple: '#7928CA',
+              neon: '#00B4D8',
+              card: '#111827',
+              dark: '#0B0F19',
+              border: '#1E293B'
+            }
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 25px -5px rgba(0, 245, 212, 0.4)',
+            'neon-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070B13;
+      color: #E2E8F0;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 245, 212, 0.35);
+      transform: translateY(-3px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #00F5D4 0%, #7928CA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .grid-bg {
+      background-image: radial-gradient(rgba(0, 245, 212, 0.1) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black font-sans antialiased">
+
+  <!-- Background Decorative Light Orbs -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/15 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/15 rounded-full blur-[120px]"></div>
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-[#070B13]/85 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center font-bold text-black font-mono text-lg shadow-neon-cyan transition-transform group-hover:scale-105">
+          M
+        </div>
+        <div>
+          <span class="font-bold tracking-tight text-white block leading-tight">Rungsikorn S.</span>
+          <span class="text-[11px] text-cyan-400 font-mono tracking-wider">MEAN • AI & IE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">เกี่ยวกับ</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">ทักษะ & AI Workflows</a>
+        <a href="#ai-showcase" class="hover:text-cyan-400 transition-colors">ComfyUI Pipelines</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors">ประสบการณ์ & รางวัล</a>
+        <a href="#credentials" class="hover:text-cyan-400 transition-colors">เอกสารรับรอง</a>
+        <a href="#contact" class="px-4 py-2 rounded-full text-xs font-semibold bg-cyan-400/10 text-cyan-300 border border-cyan-400/30 hover:bg-cyan-400 hover:text-black transition-all">
+          <i class="fa-solid fa-paper-plane mr-1.5"></i>ติดต่อฉัน
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-slate-400 hover:text-white p-2">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0c1220] border-b border-slate-800 px-6 py-4 space-y-3 text-sm">
+      <a href="#about" class="block py-1 text-slate-300 hover:text-cyan-400">เกี่ยวกับ</a>
+      <a href="#skills" class="block py-1 text-slate-300 hover:text-cyan-400">ทักษะ & AI Workflows</a>
+      <a href="#ai-showcase" class="block py-1 text-slate-300 hover:text-cyan-400">ComfyUI Pipelines</a>
+      <a href="#experience" class="block py-1 text-slate-300 hover:text-cyan-400">ประสบการณ์ & รางวัล</a>
+      <a href="#credentials" class="block py-1 text-slate-300 hover:text-cyan-400">เอกสารรับรอง</a>
+      <a href="#contact" class="block py-2 text-cyan-400 font-semibold">ติดต่อร่วมงาน</a>
+    </div>
+  </header>
+
+  <main class="pt-24 space-y-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative pt-8 pb-12 lg:pt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Intro -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            พร้อมเริ่มงาน | Ready for Tech & AI Roles
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
+            นายรังษิกร สิงห์ไธสง <br>
+            <span class="gradient-text font-mono text-2xl sm:text-4xl lg:text-5xl">(Mean)</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-medium text-slate-300">
+            <span class="text-cyan-400 font-semibold">Industrial Engineer</span> ผสานพลัง 
+            <span class="text-purple-400 font-semibold">Generative AI Specialist</span>
+          </p>
+
+          <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+            สำเร็จการศึกษาวิศวกรรมศาสตรบัณฑิต (วศ.บ.) สาขาวิศวกรรมอุตสาหการ มหาวิทยาลัยบูรพา มีความเชี่ยวชาญทั้งหลักการปรับปรุงกระบวนการผลิต (<span class="text-slate-200">Continuous Improvement / Kaizen</span> การันตีด้วยรางวัลอันดับ 3 จาก Essilor) และเทคโนโลยีปัญญาประดิษฐ์ยุคใหม่: ออกแบบ Workflow สร้าง <strong class="text-cyan-300">Text, Image, Video, Music บน ComfyUI</strong> พร้อมทักษะการประยุกต์ใช้ <strong class="text-purple-300">AutoGPT</strong> และ VS Code ในการ Automate งานจริง
+          </p>
+
+          <!-- Quick Badges -->
+          <div class="flex flex-wrap gap-2 text-xs font-mono pt-1">
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-microchip mr-1.5 text-cyan-400"></i>ComfyUI Multi-modal</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-robot mr-1.5 text-purple-400"></i>AutoGPT Agents</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-award mr-1.5 text-amber-400"></i>Kaizen 8G Award Winner</span>
+            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-graduation-cap mr-1.5 text-blue-400"></i>B.Eng. Burapha Univ.</span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-sm flex items-center gap-2 hover:shadow-neon-cyan transition-all transform hover:-translate-y-0.5">
+              <i class="fa-solid fa-envelope"></i> ติดต่อร่วมงาน / สัมภาษณ์
+            </a>
+            <button onclick="copyContactInfo()" class="px-5 py-3 rounded-xl bg-slate-900 text-slate-200 font-semibold text-sm border border-slate-700 hover:border-slate-500 hover:bg-slate-800 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-copy text-cyan-400"></i> <span id="copyBtnText">คัดลอกเบอร์ & อีเมล</span>
+            </button>
+            <a href="#credentials" class="px-5 py-3 rounded-xl bg-purple-950/40 text-purple-300 font-semibold text-sm border border-purple-500/30 hover:bg-purple-900/40 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-file-shield"></i> เอกสารรับรอง
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Profile Visual Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            
+            <div class="relative glass-card rounded-2xl p-6 text-center space-y-4">
+              <!-- Profile Avatar Frame with Graduation Portrait Reference -->
+              <div class="relative mx-auto w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-slate-800">
+                <!-- Fallback to professional graduation vector / photo placeholder -->
+                <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900 text-cyan-400 p-4">
+                  <div class="w-32 h-32 md:w-40 md:h-40  overflow-hidden border-5 border-cyan-400/50 shadow-[0_0_20px_rgba(0,245,212,0.3)]">
+    <img src="assets/my-profile.jpg" alt="Rungsikorn Singthaisong" class="w-full h-full object-cover">
+</div>
+                  <span class="text-xs font-mono text-slate-300">Mr. Rungsikorn S.</span>
+                  <span class="text-[10px] text-cyan-300 font-mono">B.Eng (IE) Burapha</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-bold text-white">คุณรังษิกร สิงห์ไธสง</h3>
+                <p class="text-xs text-slate-400 font-mono">ชลบุรี, ประเทศไทย (พร้อมทำงาน)</p>
+              </div>
+
+              <!-- Quick Highlights Box -->
+              <div class="grid grid-cols-2 gap-2 text-left pt-2 border-t border-white/5 text-xs">
+                <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-slate-400 block text-[10px] uppercase font-mono">วุฒิการศึกษา</span>
+                  <span class="text-white font-semibold">วศ.บ. อุตสาหการ</span>
+                </div>
+                <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-slate-400 block text-[10px] uppercase font-mono">ผลการเรียน</span>
+                  <span class="text-cyan-400 font-semibold font-mono">GPA 2.82</span>
+                </div>
+                <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-slate-400 block text-[10px] uppercase font-mono">ประสบการณ์เด่น</span>
+                  <span class="text-white font-semibold">Essilor CI & BMS</span>
+                </div>
+                <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Specialized AI</span>
+                  <span class="text-purple-400 font-semibold">ComfyUI Pipeline</span>
+                </div>
+              </div>
+
+              <div class="pt-1 flex justify-center gap-3 text-slate-400 text-sm">
+                <span title="Continuous Improvement"><i class="fa-solid fa-chart-line text-cyan-400"></i> CI</span>
+                <span>•</span>
+                <span title="Kaizen Culture"><i class="fa-solid fa-bolt text-amber-400"></i> Kaizen</span>
+                <span>•</span>
+                <span title="Prompt & Node Engineering"><i class="fa-solid fa-network-wired text-purple-400"></i> AI Nodes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILL MATRIX SECTION -->
+    <section id="skills" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-cyan-400"><i class="fa-solid fa-layer-group mr-1.5"></i>Core Competencies</h2>
+        <h3 class="text-3xl font-extrabold text-white">ทักษะ & ความเชี่ยวชาญรอบด้าน</h3>
+        <p class="text-slate-400 text-sm">การผสานองค์ความรู้ด้านวิศวกรรมการผลิตแบบดั้งเดิม เข้ากับเครื่องมือ Generative AI สมัยใหม่</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Modern AI & Automation -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 border-t-2 border-t-cyan-400">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Generative AI & Agents</h4>
+            <p class="text-xs text-slate-400">การสร้างสรรค์สื่อครบวงจรและระบบอัตโนมัติ</p>
+          </div>
+          
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">ComfyUI Mastery:</strong> ออกแบบ Node Workflow สร้างครบทั้ง 4 มิติ (Text Prompting, Image Generation, Video Diffusion, AI Music Synthesis)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">AutoGPT:</strong> ใช้งาน Autonomous AI Agents วางแผนและสั่งรัน Task อัตโนมัติ
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">VS Code & Scripting:</strong> จัดการสภาพแวดล้อม พัฒนาโค้ดเบื้องต้นเพื่อเชื่อมโยง AI Tools
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">AI Automation:</strong> ลดระยะเวลาการทำงาน Creative & Operations ด้วย AI Pipelines
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Industrial Engineering & CI -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 border-t-2 border-t-purple-400">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Industrial Engineering</h4>
+            <p class="text-xs text-slate-400">การเพิ่มประสิทธิภาพและระบบคุณภาพโรงงาน</p>
+          </div>
+          
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Continuous Improvement (CI):</strong> วิเคราะห์ Process และคอขวดเพื่อลดความสูญเปล่า (Waste Elimination)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Kaizen:</strong> คิดค้นไอเดียปรับปรุงหน้างาน (การันตีรางวัลชนะเลิศอันดับ 3 จาก Essilor)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">7 QC Tools & Statistical Analysis:</strong> ควบคุมคุณภาพและประมวลผลข้อมูลสถิติ
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-purple-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Line Balancing & Metrology:</strong> จัดสมดุลสายการผลิต และการสอบเทียบเครื่องมือวัดทางกล
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Software, CAD & Tools -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 border-t-2 border-t-blue-400">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Engineering Software & CAD</h4>
+            <p class="text-xs text-slate-400">การออกแบบวิศวกรรมและซอฟต์แวร์สนับสนุน</p>
+          </div>
+          
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-blue-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">CAD/CAM Tools:</strong> AutoCAD, SolidWorks, FeatureCAM (ออกแบบชิ้นงานและจำลองการผลิต)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-blue-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Automation & Control:</strong> Basic PLC (Programmable Logic Controller)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-blue-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Creative Editing:</strong> Adobe Photoshop (ตัดต่อ ตกแต่งภาพ Retouching)
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-blue-400 mt-1 text-xs"></i>
+              <div>
+                <strong class="text-white">Data & Productivity:</strong> Microsoft Excel (คำนวณสูตรและสถิติ), Word, PowerPoint
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMFYUI & AI WORKFLOW PLAYGROUND SHOWCASE -->
+    <section id="ai-showcase" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-cyan-400"><i class="fa-solid fa-network-wired mr-1.5"></i>Interactive Pipeline</span>
+          <h2 class="text-3xl font-extrabold text-white">ComfyUI Multi-modal Capabilities</h2>
+          <p class="text-slate-400 text-sm">ทักษะการสร้างสรรค์คอนเทนต์ 4 เสาหลักด้วย Node-based Generative AI</p>
+        </div>
+        <div class="flex gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800">
+          <button onclick="switchTab('image')" id="tab-image" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold transition-all bg-cyan-400 text-black">
+            <i class="fa-regular fa-image mr-1"></i> Image
+          </button>
+          <button onclick="switchTab('video')" id="tab-video" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
+            <i class="fa-solid fa-video mr-1"></i> Video
+          </button>
+          <button onclick="switchTab('music')" id="tab-music" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
+            <i class="fa-solid fa-music mr-1"></i> Music
+          </button>
+          <button onclick="switchTab('text')" id="tab-text" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
+            <i class="fa-solid fa-font mr-1"></i> Text/Agent
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Display Area -->
+      <div class="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden border border-slate-800">
+        
+        <!-- IMAGE WORKFLOW TAB -->
+        <div id="content-image" class="tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-500/10 text-cyan-300 text-xs font-mono">
+              <i class="fa-solid fa-diagram-project"></i> Latent Diffusion & ControlNet
+            </div>
+            <h3 class="text-2xl font-bold text-white">High-fidelity Image Synthesis</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              ควบคุมการเรนเดอร์ภาพด้วย ComfyUI Node Graph: เชื่อมต่อ Checkpoint Models, VAE, IP-Adapter, LoRA และ ControlNet ทำให้สามารถ Generate ภาพที่มีองค์ประกอบและ Lighting ตามความต้องการได้อย่างแม่นยำสูง
+            </p>
+            <div class="bg-black/40 rounded-xl p-4 font-mono text-xs border border-white/5 space-y-2">
+              <div class="text-slate-500">// ComfyUI Pipeline Structure</div>
+              <div class="text-cyan-300"><span class="text-purple-400">Input:</span> Load Checkpoint (SDXL / Flux) &rarr; CLIP Text Encode (Prompt)</div>
+              <div class="text-cyan-300"><span class="text-purple-400">Processing:</span> KSampler (Euler/Ancestral) + Denoise Control + Latent Upscale</div>
+              <div class="text-cyan-300"><span class="text-purple-400">Output:</span> VAE Decode &rarr; Save Image (High Resolution)</div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl overflow-hidden border border-cyan-500/30 bg-slate-900 aspect-video flex flex-col justify-center items-center p-6 text-center shadow-lg">
+              <div class="rounded-xl overflow-hidden border border-slate-700/60 shadow-lg">
+  <img src="assets/comfyui-result.jpg" alt="ComfyUI Result" class="w-full h-auto object-cover rounded-xl">
+</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO WORKFLOW TAB -->
+        <div id="content-video" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-purple-500/10 text-purple-300 text-xs font-mono">
+              <i class="fa-solid fa-film"></i> AnimateDiff / SVD Pipeline
+            </div>
+            <h3 class="text-2xl font-bold text-white">AI Video Generation & Motion Dynamics</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              การสร้างวิดีโอแบบ Generative Video จากภาพนิ่ง (Image-to-Video) หรือข้อความ (Text-to-Video) ผ่าน ComfyUI ร่วมกับ Motion Modules เพื่อให้การเคลื่อนไหวมีความสมจริง ต่อเนื่อง และ Frame-rate ราบรื่น
+            </p>
+            <div class="bg-black/40 rounded-xl p-4 font-mono text-xs border border-white/5 space-y-2">
+              <div class="text-slate-500">// Video Node Sequence</div>
+              <div class="text-purple-300"><span class="text-cyan-400">Input:</span> Source Keyframe + Motion Prompting</div>
+              <div class="text-purple-300"><span class="text-cyan-400">Processing:</span> AnimateDiff Motion Model + FreeInit temporal smoothing</div>
+              <div class="text-purple-300"><span class="text-cyan-400">Output:</span> VHS Video Combine &rarr; MP4 / GIF export</div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl overflow-hidden border border-purple-500/30 bg-slate-900 aspect-video flex flex-col justify-center items-center p-6 text-center">
+              <div class="rounded-xl overflow-hidden border border-slate-700/60 shadow-lg bg-black flex items-center justify-center max-h-[420px]">
+  <video class="w-full h-full max-h-[420px] object-contain rounded-xl" controls playsinline>
+    <source src="assets/ai-video.mp4" type="video/mp4">
+    เบราว์เซอร์ไม่รองรับการเล่นวิดีโอ
+  </video>
+</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MUSIC WORKFLOW TAB -->
+        <div id="content-music" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-500/10 text-amber-300 text-xs font-mono">
+              <i class="fa-solid fa-waveform-lines"></i> AudioLDM & MusicGen Nodes
+            </div>
+            <h3 class="text-2xl font-bold text-white">AI Sound Effects & Music Composition</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              การสร้างดนตรีประกอบ สื่อเสียง และ Soundscapes ผ่าน AI โดยระบุโทน จังหวะ BPM และสไตล์ เพื่อนำไปผสานร่วมกับวิดีโอที่สร้างขึ้นได้อย่างสมบูรณ์แบบโดยไม่มีปัญหาลิขสิทธิ์
+            </p>
+            <div class="bg-black/40 rounded-xl p-4 font-mono text-xs border border-white/5 space-y-2">
+              <div class="text-slate-500">// Audio Synthesis Workflow</div>
+              <div class="text-amber-300"><span class="text-cyan-400">Input:</span> Genre, Tempo (BPM), Instrument Conditioning</div>
+              <div class="text-amber-300"><span class="text-cyan-400">Engine:</span> MusicGen / Spectrogram Diffusion</div>
+              <div class="text-amber-300"><span class="text-cyan-400">Output:</span> WAV/MP3 Mastering & Level Equalization</div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl overflow-hidden border border-amber-500/30 bg-slate-900 aspect-video flex flex-col justify-center items-center p-6 text-center">
+              <div class="h-full min-h-[300px] rounded-xl border border-slate-700/60 bg-slate-900/60 p-6 flex flex-col items-center justify-center text-center gap-5">
+  <div class="w-16 h-16 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(0,245,212,0.25)]">
+    <i class="fa-solid fa-music"></i>
+  </div>
+  <div>
+    <h4 class="text-white font-semibold text-lg">AI Generated Audio Sample</h4>
+    <p class="text-slate-400 text-xs mt-1">โมเดล MusicGen / AudioLDM ผ่าน ComfyUI</p>
+  </div>
+  
+  <!-- เครื่องเล่นเสียง -->
+  <audio controls class="w-full max-w-sm rounded-lg">
+    <source src="assets/audio-sample.wav" type="audio/mpeg">
+    เบราว์เซอร์ไม่รองรับการเล่นไฟล์เสียง
+  </audio>
+
+  <div class="flex gap-2">
+    <span class="px-2.5 py-1 bg-slate-800 text-cyan-300 text-[11px] font-mono rounded">44.1kHz</span>
+    <span class="px-2.5 py-1 bg-slate-800 text-purple-300 text-[11px] font-mono rounded">Stereo</span>
+    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 text-[11px] font-mono rounded">Zero Royalty</span>
+  </div>
+</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT / AUTOGPT TAB -->
+        <div id="content-text" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-green-500/10 text-green-300 text-xs font-mono">
+              <i class="fa-solid fa-robot"></i> AutoGPT & Autonomous Loop
+            </div>
+            <h3 class="text-2xl font-bold text-white">AutoGPT & Workflow Orchestration</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              การนำ AutoGPT มาประยุกต์ร่วมกับ VS Code เพื่อสั่งการให้ AI ทำงานอัตโนมัติเป็นขั้นตอน เช่น การค้นหาข้อมูล การเขียนแบบร่างเอกสารวิศวกรรม การตรวจสอบโค้ด และการจัดเตรียมข้อมูลสำหรับ ComfyUI
+            </p>
+            <div class="bg-black/40 rounded-xl p-4 font-mono text-xs border border-white/5 space-y-2">
+              <div class="text-slate-500">// Agent Goal Execution</div>
+              <div class="text-green-300"><span class="text-purple-400">Agent Role:</span> Process Optimization Researcher</div>
+              <div class="text-green-300"><span class="text-purple-400">Actions:</span> Web Scraping &rarr; Synthesis &rarr; Auto Code Execution</div>
+              <div class="text-green-300"><span class="text-purple-400">Environment:</span> VS Code, Terminal & Python Scripting</div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl overflow-hidden border border-green-500/30 bg-slate-900 aspect-video flex flex-col justify-center items-center p-6 text-center">
+              <div class="w-16 h-16 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-3">
+                <i class="fa-solid fa-terminal"></i>
+              </div>
+              <h4 class="text-white font-semibold text-base mb-1">Autonomous Task Delegation</h4>
+              <p class="text-slate-400 text-xs max-w-sm">ลดเวลาทำงานซ้ำซ้อนด้วย AI Agent ที่สามารถคิด วางแผน และลงมือทำได้ด้วยตนเอง</p>
+              <div class="mt-4 flex gap-2">
+                <span class="px-2 py-1 bg-slate-800 text-green-300 text-[10px] font-mono rounded">Auto Tasks</span>
+                <span class="px-2 py-1 bg-slate-800 text-green-300 text-[10px] font-mono rounded">VS Code Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & CERTIFICATES TIMELINE -->
+    <section id="experience" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-cyan-400"><i class="fa-solid fa-briefcase mr-1.5"></i>Career & Track Record</h2>
+        <h3 class="text-3xl font-extrabold text-white">ประสบการณ์ทำงาน & ผลงานจริง</h3>
+        <p class="text-slate-400 text-sm">การทำงานในสถานประกอบการอุตสาหกรรมชั้นนำ การฝึกงาน และรางวัลการันตีคุณภาพ</p>
+      </div>
+
+      <div class="relative border-l border-slate-800 ml-4 md:ml-32 space-y-12">
+        
+        <!-- Job 1: Burapha Metrology System -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center text-[10px] text-cyan-400 shadow-neon-cyan">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="glass-card rounded-2xl p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded bg-cyan-500/10 text-cyan-300 text-xs font-mono font-semibold">2 ธ.ค. 2562 - 30 มิ.ย. 2563</span>
+              <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>อ.เมืองชลบุรี, ชลบุรี</span>
+            </div>
+            <h4 class="text-xl font-bold text-white">เจ้าหน้าที่ห้องปฏิบัติการ ระดับ 1 (Laboratory Officer Level 1)</h4>
+            <div class="text-cyan-400 text-sm font-semibold">บริษัท บูรพา เมโทรโลยี ซิสเต็ม จำกัด (Burapha Metrology System Co., Ltd.)</div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              ปฏิบัติงานในห้องปฏิบัติการสอบเทียบมาตรฐานอุตสาหกรรม:
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+              <li>งานปฏิบัติการสอบเทียบเครื่องมือวัดทางด้าน <strong class="text-slate-200">Mechanical (ทางกล)</strong> เพื่อให้เป็นไปตามมาตรฐานการสอบเทียบ</li>
+              <li>งานบริการลูกค้า: รับ-ส่งงานสอบเทียบ ประสานงานและจัดทำรายงานผลการสอบเทียบให้กับลูกค้าอุตสาหกรรม</li>
+            </ul>
+            <div class="pt-2">
+              <button onclick="openModal('cert-bms')" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono inline-flex items-center gap-1.5 underline decoration-cyan-500/40 underline-offset-4">
+                <i class="fa-solid fa-file-lines"></i> ดูใบรับรองการผ่านงาน (BMS Certificate)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Award Highlight: Kaizen 8G Best Suggestion -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-amber-400 flex items-center justify-center text-[10px] text-amber-400 shadow-lg">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div class="glass-card rounded-2xl p-6 space-y-3 border border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-transparent">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-mono font-bold">
+                <i class="fa-solid fa-trophy mr-1"></i> ได้รับรางวัลอันดับ 3 (Kaizen 8G Best Suggestion Award)
+              </span>
+              <span class="text-xs text-slate-400 font-mono">29 พฤศจิกายน 2561</span>
+            </div>
+            <h4 class="text-xl font-bold text-white">รางวัล Kaizen 8G : นวัตกรรมป้องกันการเติมซองผิด</h4>
+            <div class="text-amber-400 text-sm font-semibold">Essilor Optical Laboratory (Thailand) Co., Ltd.</div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              คิดค้นและนำเสนอข้อเสนอแนะในการปรับปรุงกระบวนการทำงานจริงในหัวข้อ <strong class="text-white">"ป้องกันการเติมซองผิด"</strong> ผ่านการประยุกต์ใช้หลักการ Poka-Yoke / Kaizen เพื่อลดข้อผิดพลาดในสายการผลิต ช่วยลดของเสียและเพิ่มความถูกต้องของผลิตภัณฑ์
+            </p>
+            <div class="pt-2">
+              <button onclick="openModal('cert-kaizen')" class="text-xs text-amber-400 hover:text-amber-300 font-mono inline-flex items-center gap-1.5 underline decoration-amber-500/40 underline-offset-4">
+                <i class="fa-solid fa-award"></i> ดูเกียรติบัตรรางวัล Kaizen 8G
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2: Essilor Optical Laboratory CI Internship -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-purple-400 flex items-center justify-center text-[10px] text-purple-400">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <div class="glass-card rounded-2xl p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded bg-purple-500/10 text-purple-300 text-xs font-mono font-semibold">28 พ.ค. 2561 - 26 ก.ค. 2561</span>
+              <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>นิคมอุตสาหกรรมอมตะนคร, ชลบุรี</span>
+            </div>
+            <h4 class="text-xl font-bold text-white">นักศึกษาฝึกงาน ฝ่าย Continuous Improvement (CI)</h4>
+            <div class="text-purple-400 text-sm font-semibold">บริษัท เอสซีลอร์ ออพติคอล แลบอราทอรี (ประเทศไทย) จำกัด</div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              ฝึกงานในส่วนงานพัฒนาและปรับปรุงกระบวนการอย่างต่อเนื่อง:
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+              <li>ศึกษาและจัดทำ Line Balancing เพื่อลด Cycle Time ในสายการผลิตเลนส์สายตาระดับโลก</li>
+              <li>ใช้เครื่องมือ 7 QC Tools และสถิติวิศวกรรมในการวิเคราะห์หาสาเหตุของ Defect ในโรงงาน</li>
+              <li>จัดทำกิจกรรม Kaizen 8G และสื่อสารเพื่อสร้างวัฒนธรรม Continuous Improvement</li>
+            </ul>
+            <div class="pt-2">
+              <button onclick="openModal('cert-essilor')" class="text-xs text-purple-400 hover:text-purple-300 font-mono inline-flex items-center gap-1.5 underline decoration-purple-500/40 underline-offset-4">
+                <i class="fa-solid fa-file-signature"></i> ดูหนังสือรับรองการฝึกงาน (Essilor CI)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education: Burapha University -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-blue-400 flex items-center justify-center text-[10px] text-blue-400">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="glass-card rounded-2xl p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded bg-blue-500/10 text-blue-300 text-xs font-mono font-semibold">2558 - 2562 (สำเร็จการศึกษา 16 ส.ค. 2562)</span>
+              <span class="text-xs text-slate-400 font-mono">เกรดเฉลี่ยสะสม: 2.82</span>
+            </div>
+            <h4 class="text-xl font-bold text-white">วิศวกรรมศาสตรบัณฑิต (วศ.บ.) สาขาวิศวกรรมอุตสาหการ</h4>
+            <div class="text-blue-400 text-sm font-semibold">คณะวิศวกรรมศาสตร์ มหาวิทยาลัยบูรพา (Burapha University)</div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              ศึกษารวม 151 หน่วยกิต ครอบคลุม: การเขียนโปรแกรมคอมพิวเตอร์สำหรับวิศวกรรม (เกรด B), การวิจัยการดำเนินงาน (Operation Research เกรด A), การจัดการทางวิศวกรรม (เกรด A), กรรมวิธีการผลิตและเขียนแบบการผลิต (เกรด A), สถิติวิศวกรรม (เกรด B+), การออกแบบผังโรงงาน และระบบสนับสนุนการตัดสินใจ
+            </p>
+            <div class="pt-2">
+              <button onclick="openModal('cert-degree')" class="text-xs text-blue-400 hover:text-blue-300 font-mono inline-flex items-center gap-1.5 underline decoration-blue-500/40 underline-offset-4">
+                <i class="fa-solid fa-certificate"></i> ดูหนังสือรับรองวุฒิปริญญาบัตร ม.บูรพา
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & DOCUMENT ARCHIVE SECTION -->
+    <section id="credentials" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-cyan-400"><i class="fa-solid fa-shield-halved mr-1.5"></i>Official Documents</h2>
+        <h3 class="text-3xl font-extrabold text-white">เอกสารอ้างอิงและใบรับรอง</h3>
+        <p class="text-slate-400 text-sm">ข้อมูลและเอกสารทางการที่สามารถตรวจสอบและยืนยันประวัติการทำงานได้</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Doc 1: Kaizen Award -->
+        <div onclick="openModal('cert-kaizen')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-amber-400/60 group">
+          <div class="h-32 bg-amber-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-amber-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+            <i class="fa-solid fa-award text-4xl text-amber-400 mb-2"></i>
+            <span class="text-[11px] font-mono text-amber-300">รางวัลอันดับ 3 Kaizen 8G</span>
+          </div>
+          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-amber-400 transition-colors">เกียรติบัตร Kaizen 8G</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">หัวข้อ "ป้องกันการเติมซองผิด" จาก Essilor Optical Laboratory</p>
+          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+        </div>
+
+        <!-- Doc 2: BMS Work Cert -->
+        <div onclick="openModal('cert-bms')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-cyan-400/60 group">
+          <div class="h-32 bg-cyan-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-cyan-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+            <i class="fa-solid fa-stamp text-4xl text-cyan-400 mb-2"></i>
+            <span class="text-[11px] font-mono text-cyan-300">ใบรับรองการผ่านงาน BMS</span>
+          </div>
+          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-cyan-400 transition-colors">บริษัท บูรพา เมโทรโลยี ซิสเต็ม</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">ตำแหน่ง เจ้าหน้าที่ห้องปฏิบัติการ ระดับ 1 ด้าน Mechanical</p>
+          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+        </div>
+
+        <!-- Doc 3: Essilor Internship Cert -->
+        <div onclick="openModal('cert-essilor')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-purple-400/60 group">
+          <div class="h-32 bg-purple-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-purple-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+            <i class="fa-solid fa-file-contract text-4xl text-purple-400 mb-2"></i>
+            <span class="text-[11px] font-mono text-purple-300">หนังสือรับรองการฝึกงาน CI</span>
+          </div>
+          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-purple-400 transition-colors">บริษัท เอสซีลอร์ ออพติคอล</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">ฝ่าย Continuous Improvement (CI) นิคมฯ อมตะนคร</p>
+          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+        </div>
+
+        <!-- Doc 4: Degree Certificate -->
+        <div onclick="openModal('cert-degree')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-blue-400/60 group">
+          <div class="h-32 bg-blue-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-blue-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+            <i class="fa-solid fa-graduation-cap text-4xl text-blue-400 mb-2"></i>
+            <span class="text-[11px] font-mono text-blue-300">วศ.บ. มหาวิทยาลัยบูรพา</span>
+          </div>
+          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">หนังสือรับรองวุฒิการศึกษา</h4>
+          <p class="text-xs text-slate-400 line-clamp-2">วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมอุตสาหการ (GPA 2.82)</p>
+          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="pb-16 pt-4">
+      <div class="glass-card rounded-3xl p-8 lg:p-12 relative overflow-hidden border border-cyan-500/30">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-cyan-400"><i class="fa-solid fa-paper-plane mr-1.5"></i>Get in Touch</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">พร้อมร่วมงานสร้างสรรค์นวัตกรรมใหม่</h2>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-xl">
+              ต้องการวิศวกรที่มีความเข้าใจทั้งกระบวนการทำงานแบบ Lean/CI และทักษะ Generative AI ยุคใหม่ เพื่อเพิ่มผลผลิตให้กับองค์กร ติดต่อผมได้ทันทีครับ
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <a href="mailto:Mean_@outlook.com" class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-400 flex items-center gap-3 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 font-mono">Email</div>
+                  <div class="text-sm font-bold text-white">Mean_@outlook.com</div>
+                </div>
+              </a>
+
+              <a href="tel:0924925992" class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-400 flex items-center gap-3 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 font-mono">Tel / Mobile</div>
+                  <div class="text-sm font-bold text-white">092-4925992</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="text-xs text-slate-400 pt-2 flex items-center gap-2">
+              <i class="fa-solid fa-house-chimney text-cyan-400"></i>
+              <span>ที่อยู่ปัจจุบัน: 4/96 หมู่ 6 ถ.มิตรสัมพันธ์ ต.บ้านปึก อ.เมือง จ.ชลบุรี 20130</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 text-center space-y-4">
+            <h3 class="text-white font-bold text-base">สรุปโปรไฟล์สำหรับ HR / ผู้ว่าจ้าง</h3>
+            <div class="space-y-2 text-left text-xs font-mono text-slate-300">
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400">ตำแหน่งที่เปิดรับ:</span>
+                <span class="text-cyan-300">AI Specialist / IE / CI</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400">ระดับการศึกษา:</span>
+                <span class="text-white">วศ.บ. (วิศวกรรมอุตสาหการ)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400">จุดเด่นสำคัญ:</span>
+                <span class="text-purple-300">ComfyUI + CI / Kaizen</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400">สถานะ:</span>
+                <span class="text-green-400 font-semibold">Available for Work</span>
+              </div>
+            </div>
+
+            <button onclick="window.print()" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-600 text-black font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <i class="fa-solid fa-print"></i> พิมพ์หน้านี้เป็น Resume (PDF)
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div>© 2026 นายรังษิกร สิงห์ไธสง (Mean) — Portfolio & Interactive CV</div>
+          <div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
+            <span>BUU Industrial Engineering</span>
+            <span>•</span>
+            <span>Generative AI Developer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- INTERACTIVE MODAL FOR CERTIFICATE INSPECTION -->
+  <div id="certModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card bg-[#0e1626] border border-cyan-500/40 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i id="modalIcon" class="fa-solid fa-award text-amber-400 text-xl"></i>
+          <div>
+            <h3 id="modalTitle" class="text-white font-bold text-base sm:text-lg">ชื่อเอกสารอ้างอิง</h3>
+            <span id="modalSubtitle" class="text-xs text-cyan-400 font-mono">หน่วยงานผู้ออกเอกสาร</span>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white p-2 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Content from PDF references) -->
+      <div id="modalBody" class="p-5 sm:p-6 overflow-y-auto space-y-4 text-sm text-slate-300">
+        <!-- Dynamic Content injected via JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-slate-900 border-t border-slate-800 flex justify-between items-center text-xs">
+        <span class="text-slate-400 font-mono">Verified Reference Record</span>
+        <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-colors">
+          ปิดหน้าต่าง
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Tab Switching Logic for ComfyUI showcase
+    function switchTab(type) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-cyan-400', 'text-black');
+        btn.classList.add('text-slate-400');
+      });
+
+      const selectedContent = document.getElementById(`content-${type}`);
+      const selectedBtn = document.getElementById(`tab-${type}`);
+      
+      if (selectedContent && selectedBtn) {
+        selectedContent.classList.remove('hidden');
+        selectedBtn.classList.add('bg-cyan-400', 'text-black');
+        selectedBtn.classList.remove('text-slate-400');
+      }
+    }
+
+    // Modal Details based on attached documents
+    const docData = {
+      'cert-kaizen': {
+        title: 'เกียรติบัตรรางวัล Kaizen 8G (อันดับ 3)',
+        subtitle: 'Essilor Optical Laboratory (Thailand) Co., Ltd. • 29 พ.ย. 2561',
+        icon: 'fa-solid fa-trophy text-amber-400',
+        html: `
+          <div class="space-y-3 font-sans">
+            <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200">
+              <strong class="block text-base text-amber-300">8G Best Suggestion Award - รางวัลอันดับ 3</strong>
+              หัวข้อ: <strong>"ป้องกันการเติมซองผิด"</strong> ประจำเดือน พฤศจิกายน 2561
+            </div>
+            <p><strong>ผู้รับเกียรติบัตร:</strong> นายรังษิกร สิงห์ไธสง</p>
+            <p><strong>ผู้ลงนามรับรอง:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-slate-300 text-xs font-mono">
+              <li>Suparuerk Ratsameted (CI Technical Training Engineer)</li>
+              <li>Phesat Leekasemsup (CI Manager)</li>
+              <li>Pascal Pecheur (General Manager, Essilor)</li>
+            </ul>
+            <p class="text-xs text-slate-400 pt-2 border-t border-slate-800">
+              * เป็นผลงานที่คิดค้นเพื่อแก้ปัญหาความผิดพลาดในการบรรจุซองผลิตภัณฑ์ โดยใช้แนวคิด Poka-Yoke และ Kaizen ในโรงงานจริง
+            </p>
+          </div>
+        `
+      },
+      'cert-bms': {
+        title: 'ใบรับรองการผ่านงาน (Certificate of Employment)',
+        subtitle: 'บริษัท บูรพา เมโทรโลยี ซิสเต็ม จำกัด • 30 มิ.ย. 2563',
+        icon: 'fa-solid fa-stamp text-cyan-400',
+        html: `
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-200">
+              <strong class="block text-base text-cyan-300">ตำแหน่ง: เจ้าหน้าที่ห้องปฏิบัติการ ระดับ 1</strong>
+              สังกัดฝ่าย: ห้องปฏิบัติการ (Laboratory)
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-black/30 p-3 rounded-lg">
+              <div><strong>ระยะเวลาปฏิบัติงาน:</strong> 2 ธ.ค. 2562 – 30 มิ.ย. 2563</div>
+              <div><strong>ประเภทการจ้าง:</strong> พนักงานประจำรายเดือน (Full Time)</div>
+            </div>
+            <p><strong>ภาระงานหลัก:</strong></p>
+            <ol class="list-decimal list-inside space-y-1 text-slate-300 text-sm">
+              <li>งานปฏิบัติการสอบเทียบด้าน Mechanical (ทางกล) ด้วยเครื่องมือมาตรฐานความละเอียดสูง</li>
+              <li>งานด้านบริการลูกค้า รับ-ส่งงานสอบเทียบ ประสานงานและจัดทำเอกสารรับรองให้โรงงานคู่ค้า</li>
+            </ol>
+            <p class="text-xs text-slate-400 pt-2 border-t border-slate-800 font-mono">
+              ลงนามรับรองโดย: นายประกิจ กาญจนกันติพัฒน์ (กรรมการผู้จัดการ)
+            </p>
+          </div>
+        `
+      },
+      'cert-essilor': {
+        title: 'หนังสือรับรองการฝึกงาน (Internship Certificate)',
+        subtitle: 'บริษัท เอสซีลอร์ ออพติคอล แลบอราทอรี (ประเทศไทย) จำกัด • 26 ก.ค. 2561',
+        icon: 'fa-solid fa-file-contract text-purple-400',
+        html: `
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-200">
+              <strong class="block text-base text-purple-300">ตำแหน่ง: นักศึกษาฝึกงาน</strong>
+              สังกัดส่วนงาน: Continuous Improvement (CI)
+            </div>
+            <div class="text-xs font-mono bg-black/30 p-3 rounded-lg space-y-1">
+              <div><strong>เอกสารเลขที่:</strong> HR_CL215.2561</div>
+              <div><strong>ช่วงเวลา:</strong> 28 พฤษภาคม 2561 จนถึง วันที่ 26 กรกฎาคม 2561</div>
+              <div><strong>สถานที่:</strong> นิคมอุตสาหกรรมอมตะนคร จ.ชลบุรี</div>
+            </div>
+            <p class="text-sm">
+              ได้ปฏิบัติงานจริงในการวิเคราะห์สายการผลิต เลนส์แว่นตาระดับสากล ร่วมกับทีมวิศวกร Continuous Improvement เพื่อศึกษาลดการสูญเสียและเพิ่มประสิทธิภาพการผลิต
+            </p>
+            <p class="text-xs text-slate-400 pt-2 border-t border-slate-800 font-mono">
+              ลงนามรับรองโดย: นางสาว โฆษิณี สุขเกษม (ผู้จัดการฝ่ายทรัพยากรบุคคลและธุรการ)
+            </p>
+          </div>
+        `
+      },
+      'cert-degree': {
+        title: 'หนังสือรับรองวุฒิปริญญาบัตร มหาวิทยาลัยบูรพา',
+        subtitle: 'Burapha University • 28 ส.ค. 2562',
+        icon: 'fa-solid fa-graduation-cap text-blue-400',
+        html: `
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-200">
+              <strong class="block text-base text-blue-300">ปริญญา: วิศวกรรมศาสตรบัณฑิต (วศ.บ.)</strong>
+              สาขาวิชา: วิศวกรรมอุตสาหการ (Industrial Engineering)
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-black/30 p-3 rounded-lg">
+              <div><strong>รหัสประจำตัว:</strong> 58050411</div>
+              <div><strong>เกรดเฉลี่ยสะสม (GPA):</strong> 2.82</div>
+              <div><strong>จำนวนหน่วยกิตสะสม:</strong> 151 หน่วยกิต</div>
+              <div><strong>สำเร็จการศึกษา:</strong> 16 สิงหาคม 2562</div>
+            </div>
+            <p class="text-sm">
+              ผ่านการศึกษาหลักสูตรวิศวกรรมศาสตร์ ทั้งการเขียนแบบวิศวกรรม, การเขียนโปรแกรมคอมพิวเตอร์, การวิจัยการดำเนินงาน (OR), ระบบอัตโนมัติในอุตสาหกรรม, การควบคุมคุณภาพ และการบริหารโครงการ
+            </p>
+          </div>
+        `
+      }
+    };
+
+    function openModal(id) {
+      const data = docData[id];
+      if (!data) return;
+      
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalSubtitle').innerText = data.subtitle;
+      document.getElementById('modalIcon').className = data.icon;
+      document.getElementById('modalBody').innerHTML = data.html;
+      
+      document.getElementById('certModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('certModal').classList.add('hidden');
+    }
+
+    // Close modal on click outside
+    document.getElementById('certModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Copy Contact Function
+    function copyContactInfo() {
+      const textToCopy = "นายรังษิกร สิงห์ไธสง (Mean) | เบอร์โทร: 092-4925992 | อีเมล: Mean_@outlook.com";
+      const dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = textToCopy;
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+
+      const btnText = document.getElementById('copyBtnText');
+      const originalText = btnText.innerText;
+      btnText.innerText = "คัดลอกสำเร็จ!";
+      setTimeout(() => {
+        btnText.innerText = originalText;
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
