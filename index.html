@@ -844,6 +844,35 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    // ฟังก์ชันสำหรับเปิดดูรูปภาพหน้างาน / ภาพผลงาน
+function openWorkImageModal(title, imageSrc, caption) {
+    const modal = document.getElementById('documentModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDetails = document.getElementById('modalDetails');
+
+    if (modal && modalImage) {
+        if (modalTitle) modalTitle.innerText = title;
+        if (modalSubtitle) modalSubtitle.innerText = 'ภาพหน้างานจริง / โครงการที่รับผิดชอบ';
+        
+        modalImage.src = imageSrc;
+        modalImage.alt = title;
+        modalImage.classList.remove('hidden');
+
+        if (modalDetails) {
+            modalDetails.innerHTML = `
+                <div class="p-4 bg-slate-950/60 rounded-xl border border-slate-800 text-sm text-slate-300">
+                    <p class="font-medium text-emerald-400 mb-1">รายละเอียดหน้างาน:</p>
+                    <p>${caption}</p>
+                </div>
+            `;
+        }
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+}
     // Tab Switching Logic for ComfyUI showcase
     function switchTab(type) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
