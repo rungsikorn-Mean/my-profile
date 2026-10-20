@@ -668,60 +668,72 @@
         <p class="text-slate-400 text-sm">ข้อมูลและเอกสารทางการที่สามารถตรวจสอบและยืนยันประวัติการทำงานได้</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- คอนเทนเนอร์แบบ Flex ที่จำกัดความกว้างสูงสุดให้วางได้แถวละ 4 ใบพอดี และใช้ justify-center ดึงใบที่ 5 มาตรงกลาง -->
+      <div class="flex flex-wrap justify-center gap-6 max-w-[1240px] mx-auto">
         
         <!-- Doc 1: Kaizen Award -->
-        <div onclick="openModal('cert-kaizen')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-amber-400/60 group">
-          <div class="h-32 bg-amber-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-amber-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
-            <i class="fa-solid fa-award text-4xl text-amber-400 mb-2"></i>
-            <span class="text-[11px] font-mono text-amber-300">รางวัลอันดับ 3 Kaizen 8G</span>
+        <div onclick="openModal('cert-kaizen')" class="w-full sm:w-[260px] md:w-[270px] glass-card rounded-2xl p-5 cursor-pointer hover:border-amber-400/60 group flex flex-col justify-between">
+          <div>
+            <div class="h-32 bg-amber-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-amber-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+              <i class="fa-solid fa-award text-4xl text-amber-400 mb-2"></i>
+              <span class="text-[11px] font-mono text-amber-300">รางวัลอันดับ 3 Kaizen 8G</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-amber-400 transition-colors">เกียรติบัตร Kaizen 8G</h4>
+            <p class="text-xs text-slate-400 line-clamp-2">หัวข้อ "ป้องกันการเติมซองผิด" จาก Essilor Optical Laboratory</p>
           </div>
-          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-amber-400 transition-colors">เกียรติบัตร Kaizen 8G</h4>
-          <p class="text-xs text-slate-400 line-clamp-2">หัวข้อ "ป้องกันการเติมซองผิด" จาก Essilor Optical Laboratory</p>
-          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+          <span class="inline-block mt-4 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
 
         <!-- Doc 2: BMS Work Cert -->
-        <div onclick="openModal('cert-bms')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-cyan-400/60 group">
-          <div class="h-32 bg-cyan-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-cyan-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
-            <i class="fa-solid fa-stamp text-4xl text-cyan-400 mb-2"></i>
-            <span class="text-[11px] font-mono text-cyan-300">ใบรับรองการผ่านงาน BMS</span>
+        <div onclick="openModal('cert-bms')" class="w-full sm:w-[260px] md:w-[270px] glass-card rounded-2xl p-5 cursor-pointer hover:border-cyan-400/60 group flex flex-col justify-between">
+          <div>
+            <div class="h-32 bg-cyan-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-cyan-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+              <i class="fa-solid fa-stamp text-4xl text-cyan-400 mb-2"></i>
+              <span class="text-[11px] font-mono text-cyan-300">ใบรับรองการผ่านงาน BMS</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-cyan-400 transition-colors">บริษัท บูรพา เมโทรโลยี ซิสเต็ม</h4>
+            <p class="text-xs text-slate-400 line-clamp-2">ตำแหน่ง เจ้าหน้าที่ห้องปฏิบัติการ ระดับ 1 ด้าน Mechanical</p>
           </div>
-          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-cyan-400 transition-colors">บริษัท บูรพา เมโทรโลยี ซิสเต็ม</h4>
-          <p class="text-xs text-slate-400 line-clamp-2">ตำแหน่ง เจ้าหน้าที่ห้องปฏิบัติการ ระดับ 1 ด้าน Mechanical</p>
-          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+          <span class="inline-block mt-4 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
 
         <!-- Doc 3: Essilor Internship Cert -->
-        <div onclick="openModal('cert-essilor')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-purple-400/60 group">
-          <div class="h-32 bg-purple-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-purple-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
-            <i class="fa-solid fa-file-contract text-4xl text-purple-400 mb-2"></i>
-            <span class="text-[11px] font-mono text-purple-300">หนังสือรับรองการฝึกงาน CI</span>
+        <div onclick="openModal('cert-essilor')" class="w-full sm:w-[260px] md:w-[270px] glass-card rounded-2xl p-5 cursor-pointer hover:border-purple-400/60 group flex flex-col justify-between">
+          <div>
+            <div class="h-32 bg-purple-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-purple-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+              <i class="fa-solid fa-file-contract text-4xl text-purple-400 mb-2"></i>
+              <span class="text-[11px] font-mono text-purple-300">หนังสือรับรองการฝึกงาน CI</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-purple-400 transition-colors">บริษัท เอสซีลอร์ ออพติคอล</h4>
+            <p class="text-xs text-slate-400 line-clamp-2">ฝ่าย Continuous Improvement (CI) นิคมฯ อมตะนคร</p>
           </div>
-          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-purple-400 transition-colors">บริษัท เอสซีลอร์ ออพติคอล</h4>
-          <p class="text-xs text-slate-400 line-clamp-2">ฝ่าย Continuous Improvement (CI) นิคมฯ อมตะนคร</p>
-          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+          <span class="inline-block mt-4 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
 
         <!-- Doc 4: Degree Certificate -->
-        <div onclick="openModal('cert-degree')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-blue-400/60 group">
-          <div class="h-32 bg-blue-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-blue-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
-            <i class="fa-solid fa-graduation-cap text-4xl text-blue-400 mb-2"></i>
-            <span class="text-[11px] font-mono text-blue-300">วศ.บ. มหาวิทยาลัยบูรพา</span>
+        <div onclick="openModal('cert-degree')" class="w-full sm:w-[260px] md:w-[270px] glass-card rounded-2xl p-5 cursor-pointer hover:border-blue-400/60 group flex flex-col justify-between">
+          <div>
+            <div class="h-32 bg-blue-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-blue-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+              <i class="fa-solid fa-graduation-cap text-4xl text-blue-400 mb-2"></i>
+              <span class="text-[11px] font-mono text-blue-300">วศ.บ. มหาวิทยาลัยบูรพา</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">หนังสือรับรองวุฒิการศึกษา</h4>
+            <p class="text-xs text-slate-400 line-clamp-2">วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมอุตสาหการ (GPA 2.82)</p>
           </div>
-          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">หนังสือรับรองวุฒิการศึกษา</h4>
-          <p class="text-xs text-slate-400 line-clamp-2">วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมอุตสาหการ (GPA 2.82)</p>
-          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+          <span class="inline-block mt-4 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
-        <!-- Doc 5: สารคาม -->
-        <div onclick="openModal('sarakarm')" class="glass-card rounded-2xl p-5 cursor-pointer hover:border-blue-400/60 group">
-          <div class="h-32 bg-blue-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-blue-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
-            <i class="fa-solid fa-snowplow text-4xl text-blue-400 mb-2"></i>
-            <span class="text-[11px] font-mono text-blue-300">รับเหมา ขุด ขน ถมดิน</span>
+
+        <!-- Doc 5: ภาพการทำงานรับเหมา (ตกมาแถวล่างและอยู่ตรงกลางพอดี) -->
+        <div onclick="openModal('sarakarm')" class="w-full sm:w-[260px] md:w-[270px] glass-card rounded-2xl p-5 cursor-pointer hover:border-emerald-400/60 group flex flex-col justify-between">
+          <div>
+            <div class="h-32 bg-emerald-500/10 rounded-xl flex flex-col items-center justify-center p-4 border border-emerald-500/20 mb-4 group-hover:scale-[1.02] transition-transform">
+              <i class="fa-solid fa-snowplow text-4xl text-emerald-400 mb-2"></i>
+              <span class="text-[11px] font-mono text-emerald-300">รับเหมา ขุด ขน ถมดิน</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-emerald-400 transition-colors">ภาพการทำงานรับเหมา</h4>
+            <p class="text-xs text-slate-400 line-clamp-2">บ่อดิน อ.เมืองสารคาม จ.มหาสารคาม</p>
           </div>
-          <h4 class="text-white font-bold text-sm mb-1 group-hover:text-blue-400 transition-colors">ภาพการทำงานรับเหมา</h4>
-          <p class="text-xs text-slate-400 line-clamp-2">บ่อดิน อ.เมืองสารคาม จ.สารคาม</p>
-          <span class="inline-block mt-3 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
+          <span class="inline-block mt-4 text-[11px] text-cyan-400 font-mono">คลิกเพื่อดูรายละเอียด &rarr;</span>
         </div>
 
       </div>
@@ -844,7 +856,13 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-
+    // ฟังก์ชันสำหรับเปิดดูรูปภาพหน้างาน / ภาพผลงาน
+function openWorkImageModal(title, imageSrc, caption) {
+    const modal = document.getElementById('documentModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDetails = document.getElementById('modalDetails');
 
     if (modal && modalImage) {
         if (modalTitle) modalTitle.innerText = title;
